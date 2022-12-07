@@ -1,0 +1,243 @@
+@import url('index.css');
+
+ 
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--police-text);
+}
+
+body {
+    background: linear-gradient(208deg, rgba(221,82,120,1) 13%, rgba(84,178,211,1) 70%);
+    background-size: 400% 400%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    animation: animate 10s ease infinite;
+    }
+
+    
+   /*---Formulaire--*/
+
+.container{
+    max-width: 700px;
+    width: 100%;
+    background: whitesmoke;
+    padding: 25px 30px;
+    border-radius: 6px;
+}
+
+.container .title{
+   font-size: 25px;
+   font-weight: 500;
+   position: relative;
+   font-family: var(--police-titre);
+}
+
+.container .title::before{
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 30px;
+  left: 0;
+  bottom: 0;
+  background: #E61644;
+}
+
+.container form .Informations-personnelles{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   margin: 5px 0 5px 0;
+}
+
+form .Informations-personnelles .input-box{
+   margin-top: 8px;
+   width: calc(100% / 2 - 20px);
+}
+
+.Informations-personnelles .input-box .details{
+   display: block;
+   font-weight: 500;
+   margin-bottom: 5px;
+}
+
+.Informations-personnelles .input-box input{
+   height: 45px;
+   width: 100%;
+   outline: none;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   padding-left: 15px;
+   font-size: 14px;
+   border-bottom-width: 2px ;
+   transition: all 0.3s ease;
+}
+
+.Informations-personnelles .input-box input:focus,
+.Informations-personnelles .input-box input:valid{
+   border-color: rgb(221,82,120);
+}
+
+form .button{
+   height: 100%;
+   width: 100%;
+   margin-top: 25px;
+}
+
+.button{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+form .button .a{
+    color:black;
+    font-size:1.2em;
+    font-family:poppins, sans-serif;
+    border: 1px solid rgba(84,178,211,1);
+    padding: 10px 8px;
+    z-index:0;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+   /*padding: 10px 40px;
+   text-decoration: none;
+   outline: none;
+   color: whitesmoke;
+   border: none;
+   font-size: 18px;
+   font-weight: bold;
+   border-radius: 8px;
+   letter-spacing: 1px;
+   background: linear-gradient(208deg, rgba(221,82,120,1) 13%, rgba(84,178,211,1) 70%);*/
+}
+
+form .button .a::before{
+    content: '';
+  background: linear-gradient(-208deg, rgba(221,82,120,1) 13%, rgba(84,178,211,1) 70%);
+  position:absolute;
+  bottom:60px;
+  left:0;
+  height: 100%;
+  width:100%;
+  border-radius: 0 0 50% 50%;
+  z-index: -1;
+  transition: all .5s;
+  /* background: linear-gradient(-208deg, rgba(221,82,120,1) 13%, rgba(84,178,211,1) 70%);*/
+}
+
+.a:hover{
+    transition: color 0.9s ease-out;
+    color: whitesmoke !important;
+}
+
+form .button .a:hover::before{
+    bottom:0px;
+    border-radius: 0;
+    
+  }
+
+.Informations-personnelles .input-box #currentYear{
+   height: 45px;
+   width: 100%;
+   outline: none;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   padding-left: 15px;
+   font-size: 14px;
+   border-bottom-width: 2px ;
+   transition: all 0.3s ease;
+}
+
+.Informations-personnelles .input-box #register{
+   height: 45px;
+   width: 100%;
+   outline: none;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   padding-left: 15px;
+   font-size: 14px;
+   border-bottom-width: 2px ;
+   transition: all 0.3s ease;
+}
+
+.Informations-personnelles .input-box #course{
+   height: 45px;
+   width: 100%;
+   outline: none;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   padding-left: 15px;
+   font-size: 14px;
+   border-bottom-width: 2px ;
+   transition: all 0.3s ease;
+}
+
+.Informations-personnelles .input-box #graduateYear{
+   height: 45px;
+   width: 100%;
+   outline: none;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   padding-left: 15px;
+   font-size: 14px;
+   border-bottom-width: 2px ;
+   transition: all 0.3s ease;
+}
+
+.Informations-personnelles .input-box #job{
+   height: 45px;
+   width: 100%;
+   outline: none;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   padding-left: 15px;
+   font-size: 14px;
+   border-bottom-width: 2px ;
+   transition: all 0.3s ease;
+}
+
+@media (max-width: 584px){
+   .container{
+       max-width: 100%;
+       margin-top: 20%;
+   }
+
+   form .Informations-personnelles .input-box{
+       margin-top: 8px;
+       width: 100%;
+   }
+
+   .container form .Informations-personnelles{
+       max-height: 300px;
+       overflow-y: scroll;
+   }
+
+   .Informations-personnelles::-webkit-scrollbar{
+       width: 0;
+   }
+}
+
+ /*-----Animation------*/
+
+ @keyframes animate{
+    0%{
+        background-position: 0 50%;
+    }
+
+    50%{
+        background-position: 100% 50%;
+    }
+
+    100%{
+        background-position: 0 50%;
+    }
+}
+
+   /*--Fin Formulaire--*/

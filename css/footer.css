@@ -1,0 +1,145 @@
+/*Footer*/
+
+@import url("bootstrap-grid.css");
+
+footer{
+  padding-top: 40px;
+  padding-bottom: 20px;
+  background-color: #fff;
+  color: #000;
+ 
+ }
+
+ .icon{
+  padding-right: 15px;
+  font-size: 20px;
+ }
+
+
+ .footer-col-title{
+  font-size: 25px;
+  font-family: var(--police-titre);
+  font-weight: 600;
+  margin-bottom: 30px;
+ }
+
+ .acces-rapide{
+  padding-left: 40px !important;
+ }
+
+ .btn-maps{
+  padding: 12px 18px;
+  color: white;
+  font-family: sans-serif;
+  background: var(--color_blue);
+  height: 60px;
+  width: 200px;
+  z-index: 0;
+  position: relative;
+  transition: 0.5s all ease;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 15px 20px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: 0.5s ease;
+ }
+
+ .btn-maps:hover{
+  background: var(--color_red) !important;
+ }
+ .links p a{
+  font-size: 20px ;
+  font-weight: 500;
+  text-decoration: none;
+  text-transform: none;
+  color: var(--color_blue);
+  transition: 0.6s ease;
+ }
+
+ .links p a:hover{
+  color: var(--color_red);
+ }
+
+ .social-media ul{
+  position:relative;
+  top: 50%;
+  left:50%;
+  padding: 0;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  display: flex;
+}
+
+.social-media ul li{
+  list-style: none;
+  margin-right: 10px;
+  margin-top: 40px;
+}
+
+.infos-contact div p{
+  font-size: 19px;
+  font-family: var(--police-3);
+  font-weight: 500;
+}
+
+.infos-contact{
+  margin-bottom: 20px;
+  position: relative;
+  bottom: 20px;
+}
+
+.infos-mail, .infos-tel, .infos-localisation{
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+
+.first{
+  margin: none;
+}
+
+.social-media ul li i{
+  font-size: 25px;
+  transition:.6s;
+  color:var(--color_blue);
+}
+
+.social-media ul li a{
+  position: relative;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:  50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color:#fff ;
+  text-align: center;
+  transition: .6s;
+  box-shadow: 2px 3px 6px 4px rgba(0,0,0,0.23);
+}
+
+.social-media ul li a:hover{
+
+  transform: translate(0, -10px);
+}
+
+.social-media ul li a:hover{
+  transform: translate(0, -10px);
+}
+
+.social-media ul li a:hover i{
+ color: #fff;
+}
+
+.social-media ul li a:hover {
+  background-color: var(--color_red);
+}
+
+.copyright{
+  text-align: center;
+  font-family: var(--police-3);
+  font-weight: 500;
+}

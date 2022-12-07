@@ -1,0 +1,122 @@
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+   /* background: whitesmoke;*/
+    background: #022342;
+    box-shadow: 0 5px 10px rgba(1, 1, 1, 0.612);
+    padding: 0px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    
+}
+
+header img{
+   width: 95px;
+}
+
+header .navbar ul {
+    list-style: none;
+   
+}
+
+header .navbar ul li{
+    position: relative;
+    float: left;
+    font-family: var(--police-text);
+}
+
+
+header .navbar ul li a{
+    font-size: 16px;
+    padding: 20px;
+    color: whitesmoke;
+    display: block;
+    text-decoration: none;
+    
+}
+
+header .navbar ul li a:hover{
+    background: #3d7ab4;
+    color: whitesmoke;
+}
+
+header .navbar ul li ul{
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background: #022342;
+    display: none;
+
+}
+
+header .navbar ul li ul li{
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.532);
+}
+
+header .navbar ul li:hover > ul{
+    display: initial;
+}
+
+#menu-bar{
+    display: none;
+}
+
+header label{
+    font-size: 20px;
+    color: whitesmoke;
+    cursor: pointer;
+    display: none;
+}
+
+/*----Responsive------*/
+
+@media(max-width:991px){
+
+    header{
+        padding: 20px;
+    }
+
+    header label{
+        display: initial;
+    }
+
+    header .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #022342;
+        border-top: 1px solid rgba(255, 255, 255, 0.532);
+        display: none;
+    }
+
+    header .navbar ul li{
+        width: 100%;
+    }
+
+    header .navbar ul li ul{
+        position: relative;
+        width: 100%;
+    }
+
+    header .navbar ul li ul li{
+        background: rgb(83, 82, 82);
+    }
+
+    header .navbar ul li ul li ul{
+        width: 100%;
+        left: 0;
+    }
+
+    #menu-bar:checked ~ .navbar{
+        display: initial;
+    }
+
+}
+
+    /*----Fin Responsive------*/

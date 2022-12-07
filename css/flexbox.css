@@ -1,0 +1,75 @@
+/* row center */
+
+.flexCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexSpaceAround{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flexSpaceBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flexSpaceEvenly{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.flexLeft{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.flexRight{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+/* column */
+
+.flexColumnCenter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flexColumnSpaceAround{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flexColumnSpaceBetween{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flexColumnSpaceEvenly{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.flexColumnLeft{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.flexColumnRight{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}

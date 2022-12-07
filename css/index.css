@@ -1,0 +1,16 @@
+/* importation de nunito,  poppins et monserrat en regular 400 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&family=Poppins&display=swap');
+/* cdn pour les icones */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
+@import url('header.css');
+:root{
+    /* couleur */
+    --color_blue : rgba(84,178,211,1 );
+    --color_red : rgba(221,82,120,1);
+    /* police */
+    --police-titre : 'Poppins';
+    --police-text : 'Nunito';
+    --police-3 : 'Montserrat';
+}
+
+
