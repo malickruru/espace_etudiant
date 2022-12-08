@@ -13,7 +13,7 @@
         $row_mat_etd = $req_select_etd->fetch();	
         // $nbre_select_etd =  count($row_mat_etd);
         if (!$row_mat_etd ) {
-            echo "<span style='color:red; font-weight:bold;border:1px solid red'>Matricule non trouvé veuillez réessayer</span>";
+            echo "<span style='color:red; font-weight:bold;'>Matricule non trouvé veuillez réessayer</span>";
             $mat_etd = "";
         }else{
         $nom_etd = $row_mat_etd['Nom_Etd_Mat'] ;
@@ -36,7 +36,8 @@
                              ':Email_Etd' => $_POST['Email_Etd'],
                              ':Login_Etd' => $_POST['Login_Etd'],
                              ':Password_Etd' => md5($_POST['Password_Etd'])));
-         echo "Entrée ajoutée dans la table";
+            echo "<span style='color:green; font-weight:bold;'>Votre compte à été créer vous pouvez vous connecter</span>";
+
      }
            
     //  catch(PDOException $e){
