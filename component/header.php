@@ -17,7 +17,7 @@
                 <li> <a href="ajouter_offre_emploi.php">Offre d'emplois</a>
            </ul>
         </li>
-       <li> <a href="">Se connecter</a> </li>
+       <li> <a href="index.php?action=creer_compte">Se connecter</a> </li>
        <li> <a href=""><i class="fa-regular fa-user"></i></a> 
            <ul>
                <li> <a href="">Log Out</a>
