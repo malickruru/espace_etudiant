@@ -35,7 +35,7 @@
                              ':Date_Naiss_Etd' => $_POST['Date_Naiss_Etd'],
                              ':Email_Etd' => $_POST['Email_Etd'],
                              ':Login_Etd' => $_POST['Login_Etd'],
-                             ':Password_Etd' => $_POST['Password_Etd']));
+                             ':Password_Etd' => md5($_POST['Password_Etd'])));
          echo "Entrée ajoutée dans la table";
      }
            
