@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="css/connexion.css">
-    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connexion</title>
-</head>
-<body>
+
 
 <div class="container">
 	<div class="screen">
@@ -28,12 +18,7 @@
 				</button>				
 			</form>
 			<div class="social-login">
-				<h3>Connexion avec</h3>
-				<div class="social-icons">
-                    <a href="#" class="social-login__icon fab fa-google"></a>
-                    <a href="#" class="social-login__icon fab fa-facebook"></a>
-                    <a href="#" class="social-login__icon fab fa-twitter"></a>
-				</div>
+				<a href="index.php?action=creer_compte"><h3>Créer votre compte</h3></a>
 			</div>
 		</div>
 		<div class="screen__background">
@@ -49,5 +34,3 @@
 
 
 
-</body>
-</html>

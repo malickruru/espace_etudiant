@@ -3,7 +3,7 @@
         $mat_etd = "";
     require_once('connexion/connect.inc.php');
     if (isset($_POST['submit_mat'])) {
-       
+        echo 'bonjour, je check mon matricule ';
         $mat_etd = addslashes( $_POST['matricule']);
         // $req_select_etd = $connexion->query("SELECT * FROM t_matricules WHERE Matricule_Etd = '$mat_etd' ");
 
@@ -43,10 +43,21 @@
     //  catch(PDOException $e){
     //      echo "Erreur : " . $e->getMessage();
     //  }
-   
+    
+            
+       
+
+    
 ?>
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
     <h2>Créer un compte étudiant</h2>
     <?php if($mat_etd == ""){?>
     <form name="form_matricule" action="" method="POST">
@@ -83,5 +94,6 @@
         <input type="submit" name='Submit_Etd' value="Créer le compte">
     </form>
     <?php }?>
-
+</body>
+</html>
 

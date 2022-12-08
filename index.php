@@ -5,6 +5,9 @@ require_once("component/publication.php");
 require_once("component/emploi.php");
 require_once("component/popup.php");
 
+if (isset($_GET["action"])) {
+    $action = $_GET["action"];
+}
 
 $content = "publication";
 
@@ -30,11 +33,9 @@ if (isset($_GET["content"])) {
 
     <main class="accueil_main ">
         <div>
-
-        
         <!-- fils d'actu -->
         <?php 
-        
+        if(!isset($_GET['action'])){
         if ($content == 'publication') {
             foreach ($article as $item ) {
                 publication($utilisateur,$item['id_user'],$item['id'],$item['type'],$item['src'],$item['date'],$item['titre'],$item['description'],$comment);
@@ -45,7 +46,13 @@ if (isset($_GET["content"])) {
             }
         }
             
-        ?>
+    }
+    if($action == 'connexion'){
+        require_once('connexion.php');
+    }
+    if($action == 'creer_compte'){
+        require_once('creer_compte.php');
+    }?>
         </div>
         <!-- sidebar -->
             <div class="accueil_sidebar" id="accueil_sidebar">

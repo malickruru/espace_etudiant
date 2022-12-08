@@ -27,10 +27,10 @@ body {
     background: linear-gradient(208deg, rgba(221,82,120,1) 13%, rgba(84,178,211,1) 70%);
     background-size: 400% 400%;
     background-repeat: no-repeat;
-    height: 100vh;
+    /* height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     padding: 10px;
     animation: animate 10s ease infinite;
     }
