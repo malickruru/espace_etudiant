@@ -1,30 +1,13 @@
 <?php
     include("component/element-profil.php");
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/modification.css">
-    <link rel="stylesheet" href="css/flexbox.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/bootstrap-grid.css">
-    <title>Espace IFRAN - Modification du profil</title>
-</head> 
-<body>
-
-<!--Le Header de la page sera une bannière pour styliser la page-->
-<header class="header">
-</header>
 
 <!--Corps de la page-->
-<div class="container container-sm">
+<div class="container container-sm" style="background-color:white; padding:15px;border-radius:10px">
     <div class="row">
         <!--lien pour revenir à la page de profil-->
         <div class="col-lg-5 col-md-12 col-sm-12">
-        <a href="profil.php" class="retour FlexStart">
+        <a href="index.php?action=profil" class="retour FlexStart">
         <i class="fa-solid fa-chevron-left"></i>
         <h3>Revenir à mon profil</h3>
         </a>
@@ -38,7 +21,7 @@
                 <!-- modification de la pdp-->
                 <div class="picture">
                     <h3>Votre photo de profil</h3>
-                        <div class="p-pic">
+                        <div class="p-pic" style="position:unset;">
                             <img src="<?php echo $donnees["cle_photo"]?>" alt="#">
                         </div>  
                         <div class="btnUpload">
@@ -124,7 +107,5 @@
     </div>
 </div>
 
-</body>
-</html>
 
 

@@ -1,3 +1,6 @@
+
+
+
 <?php 
         // header('Location:http://localhost/espace_etudiant/index.php');
         $mat_etd = "";
@@ -13,7 +16,7 @@
         $row_mat_etd = $req_select_etd->fetch();	
         // $nbre_select_etd =  count($row_mat_etd);
         if (!$row_mat_etd ) {
-            echo "<span style='color:red; font-weight:bold;'>Matricule non trouvé veuillez réessayer</span>";
+            echo "<span style='background-color:white; color:red; font-weight:bold;'>Matricule non trouvé veuillez réessayer</span>";
             $mat_etd = "";
         }else{
         $nom_etd = $row_mat_etd['Nom_Etd_Mat'] ;
@@ -45,15 +48,18 @@
     //  }
    
 ?>
+<div class="container flexCenter">
 
-
-    <h2>Créer un compte étudiant</h2>
+        <div>
+        <h2>Créer un compte étudiant</h2>
     <?php if($mat_etd == ""){?>
     <form name="form_matricule" action="" method="POST">
         <label for="matricule">Saisissez votre matricule</label>
         <input type="text" name="matricule" id="matricule" >
         <input type="submit" name='submit_mat' value="Vérifier">
     </form>
+        </div>
+    
     <?php }else{?>
         <form name="form_etudiant" action="" method="POST">
         <label for="Mat_Etd">Matricule</label>
@@ -83,5 +89,5 @@
         <input type="submit" name='Submit_Etd' value="Créer le compte">
     </form>
     <?php }?>
-
+    </div>
 

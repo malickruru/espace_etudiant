@@ -1,6 +1,6 @@
 
 
-<div class="container">
+<div class="container flexCenter">
 	<div class="screen">
 		<div class="screen__content">
 			<form class="login">
@@ -12,13 +12,14 @@
 					<i class="login__icon fas fa-lock"></i>
 					<input type="password" class="login__input" placeholder="Mot de passe">
 				</div>
-				<button class="button login__submit" type="submit">
+				<button class="login__submit" type="submit">
 					<span class="button__text">Connectez-vous</span>
 					<i class="button__icon fas fa-chevron-right"></i>
 				</button>				
 			</form>
 			<div class="social-login">
-				<a href="index.php?action=creer_compte"><h3>Créer votre compte</h3></a>
+				<a href="index.php?action=creer_compte" style="color:gold"><h3>Créer votre compte</h3></a>
+				<a href="index.php?action=mdp_oublie" style="color:white">Mot de passe oublié</a>
 			</div>
 		</div>
 		<div class="screen__background">

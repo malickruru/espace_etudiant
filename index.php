@@ -5,6 +5,9 @@ require_once("component/publication.php");
 require_once("component/emploi.php");
 require_once("component/popup.php");
 
+
+$action = "";
+
 if (isset($_GET["action"])) {
     $action = $_GET["action"];
 }
@@ -23,6 +26,7 @@ if (isset($_GET["content"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
     <title>Accueil</title>
     
     <!-- css -->
@@ -32,51 +36,34 @@ if (isset($_GET["content"])) {
 <?php require_once('component/header.php')?>
 
     <main class="accueil_main ">
-        <div>
+      
         <!-- fils d'actu -->
         <?php 
         if(!isset($_GET['action'])){
-        if ($content == 'publication') {
-            foreach ($article as $item ) {
-                publication($utilisateur,$item['id_user'],$item['id'],$item['type'],$item['src'],$item['date'],$item['titre'],$item['description'],$comment);
-            }
-        }else{
-            foreach ($emploi as $item) {
-               emploi($item['titre'],$item['text']);
-            }
+         require_once("component/accueil.php");   
+    }else{
+        if($action == 'connexion'){
+            require_once('connexion.php');
         }
-            
+        if($action == 'creer_compte'){
+            require_once('creer_compte.php');
+        }
+        if($action == 'mdp_oublie'){
+            require_once('mdp_oublie.php');
+        }
+        if($action == 'profil'){
+            require_once('profil.php');
+        }
+        if($action == 'modifier_profil'){
+            require_once('modification.php');
+        }
+        if($action == 'ajouter_offre_emploi'){
+            require_once('ajouter_offre_emploi.php');
+        }
     }
-    if($action == 'connexion'){
-        require_once('connexion.php');
-    }
-    if($action == 'creer_compte'){
-        require_once('creer_compte.php');
-    }?>
-        </div>
-        <!-- sidebar -->
-            <div class="accueil_sidebar" id="accueil_sidebar">
-                <div class="accueil_sidebar_link">
-                    <div class="accueil_sidebar_item accueil_border_bottom">
-                        <a href="?content=publication">Voir les publications</a>
-                    </div>
-                    <div class="accueil_sidebar_item">
-                      
-                        <a href="?content=offres">Voir les offres d'emplois</a>
-                    </div>
-                </div>
-                <div class="accueil_sidebar_user">
-                    <h4>Etudiants Connectés</h4>
-                    <div class="overflow_y_scroll">
-                    <?php 
-                    foreach ($utilisateur as $user ) {
-                        utilisateur($user['image'],$user["nom"],$user["tel"],$user["mail"] );
-                    }
-                ?>
-                    </div>
-                
-                </div>
-            </div>
+    ?>
+        
+        
     </main>
     <?php require_once('component/footer.php') ?>
 

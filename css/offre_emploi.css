@@ -2,29 +2,14 @@
 
  
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: var(--police-text);
-}
 
-body {
-    background: linear-gradient(208deg, rgba(221,82,120,1) 13%, rgba(84,178,211,1) 70%);
-    background-size: 400% 400%;
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    animation: animate 10s ease infinite;
-    }
+
+
 
     
    /*---Formulaire--*/
 
-.container{
+.form_container{
     max-width: 700px;
     width: 100%;
     background: whitesmoke;
@@ -32,14 +17,14 @@ body {
     border-radius: 6px;
 }
 
-.container .title{
+.form_container .title{
    font-size: 25px;
    font-weight: 500;
    position: relative;
    font-family: var(--police-titre);
 }
 
-.container .title::before{
+.form_container .title::before{
   content: '';
   position: absolute;
   height: 3px;
@@ -49,7 +34,7 @@ body {
   background: #E61644;
 }
 
-.container form .Informations-personnelles{
+.form_container form .Informations-personnelles{
    display: flex;
    flex-wrap: wrap;
    justify-content: space-between;
@@ -204,7 +189,7 @@ form .button .a:hover::before{
 }
 
 @media (max-width: 584px){
-   .container{
+   .form_container{
        max-width: 100%;
        margin-top: 20%;
    }
@@ -214,7 +199,7 @@ form .button .a:hover::before{
        width: 100%;
    }
 
-   .container form .Informations-personnelles{
+   .form_container form .Informations-personnelles{
        max-height: 300px;
        overflow-y: scroll;
    }

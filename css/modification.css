@@ -28,14 +28,14 @@ body{
 }
 
 
-header{
+/* header{
     background-image: url(../medias/profil32.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 400px;
     width: 100%;
-}
+} */
 
 h1, h2, h3, h4, h5, h6{
     font-family: 'Poppins';

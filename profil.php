@@ -5,24 +5,8 @@ include('component/element-profil.php');
 ?>
 
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/profil.css">
-    <link rel="stylesheet" href="css/flexbox.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/bootstrap-grid.css">
-    <title>Espace IFRAN - Mon profil</title>
-</head> 
-<body>
 
-    <!--Navbar de la page start-->
-    
-    <?php require_once('component/header.php')?>
-    
+ 
 
     <!--La page sera structurée en plusieurs blocs (comme sur Linkedin)-->
 
@@ -50,36 +34,36 @@ include('component/element-profil.php');
                     <!--Infos supplémenntaires (parcours spécialité, mail, tel, année de sortie et d'entrée)-->
                     <div class="supp-info-wrapper">
                         <div class="year" id="year">
-                            <div class="year-start-wrapper">
+                            <div class="year-start-wrapper my-2">
                                     <h4>Année d'Entrée :</h4>
                                     <p class="year-start mx-2" id="year-start">2020</p>
                             </div>  
-                            <div class="year-end-wrapper">
+                            <div class="year-end-wrapper my-2">
                                 <h4>Année de sortie :</h4>
                                 <p class="year-end mx-2" id="year-end">2023</p>
                             </div>     
                         </div>
                         <div class="academic-year" id="academic-year">
-                            <div class="parcours-wrapper" id="parcours-wrapper">
+                            <div class="parcours-wrapper my-2" id="parcours-wrapper" >
                                 <h4>Parcours :</h4>
                                 <p class="parcours mx-2" id="parcours">B2</p>
                             </div>
-                            <div class="specialite-wrapper" id="specialite-wrapper">
+                            <div class="specialite-wrapper my-2" id="specialite-wrapper">
                                 <h4>Spécialité :</h4>
                                 <p class="specialite mx-2" id="specialite">Développement Web</p>
                             </div>
                         </div>
                         <div class="matricule-wrapper">
-                            <div class="p-matricule">
+                            <div class="p-matricule my-2">
                                 <h4>Matricule :</h4>
                                 <p class="matricule mx-2" id="matricule">ETd21IF-0052</p>
                             </div>
                         </div>
                         <div class="informations-wrapper">
-                            <div class="p-tel" id="p-tel">
+                            <div class="p-tel my-2" id="p-tel">
                                 <p><i class="fa-solid fa-phone"></i></i>0708091010</p>
                             </div>
-                            <div class="p-mail" id="p-mail">
+                            <div class="p-mail my-2" id="p-mail">
                                 <i class="fa-sharp fa-solid fa-envelope"></i>
                                 <a href="mailto:emmaDuBois121212@gmail.com">emmaDuBois121212@gmail.com</a>
                             </div>
@@ -162,7 +146,7 @@ include('component/element-profil.php');
                       <!--Cette div contiendra deux élement, une div-bouton pour modifier le profil, et une autre pour pouvoir se déconnecter directement depuis la page-->
                         <div class="modify-profile" id="modify-profile">
                             <i class="fa-solid fa-gear mx-3"></i>  
-                            <a href="modification.php" class="">Modifier le profil</a>
+                            <a href="index.php?action=modifier_profil" class="">Modifier le profil</a>
                         </div>
                             <hr class="hr-option">
                         <div class="log-out" id="log-out">
@@ -172,7 +156,7 @@ include('component/element-profil.php');
                   </div>
                   <!--Cette div permettra de télécharger un CV (que l'utilisateur aura uploadé-->
                   <div class="download-cv">
-                        <h3>Télécharger le CV<i class="fa-solid fa-download mx-2"></i></h3>
+                        <h3 class="mt-2">Télécharger le CV<i class="fa-solid fa-download mx-2"></i></h3>
                         <div class=" download-link flexSpaceAround">
                           <a href="#">--> Cliquez Ici pour télécharger <--</a>
                         </div>
@@ -182,64 +166,4 @@ include('component/element-profil.php');
         </div>
         </div>
 
-        <!--Footer start-->
-
-
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-4 nous-contacter">
-                        <h5 class="footer-col-title">Nous contacter</h5>
-                        <div class="infos-contact">
-                            <div class="infos-mail">
-                                <i class="icon fa-solid fa-envelope"></i>
-                                <p>infos@ifran.ci</p>
-                            </div>
-                            <div class="infos-tel">
-                                <i class="icon fa-solid fa-phone"></i>
-                                <p>+225 07 88 35 67 54</p>
-                            </div>
-                            <div class="infos-localisation">
-                                <i class="icon fa-solid fa-location-dot"></i> 
-                                <p>Cocody, Riviera Bonoumin à 500m d'Abidjan Mall</p>
-                            </div>
-                        </div>
-                        <div class="maps-button py-3">
-                            <a href="https://goo.gl/maps/uwH8Mb4vmN6GaRNd9" class="btn-maps" target="_blank">Google maps</a>
-                        </div>
-                    </div>
-                    
-                    <div class="col-sm-4 acces-rapide">
-                        <h5 class=" footer-col-title">Accès Rapide</h5>
-                        <div class="links">
-                            <p><a href="#">Accueil</a></p>
-                            <p><a href="#">Offres d'emploi</a></p>
-                            <p><a href="#">Faire un post</a></p>
-                            <p><a href="#">Alumni</a></p>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-4 follow-us">
-                        <h5 class="footer-col-title">Suivez-Nous</h5>
-                        <div class="social-media">
-                            <ul>
-                                <li class="first"><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin"></i></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div> 
-                <div class="row">
-                    <div class="col">
-                        <p class="copyright pt-4">Copyright &copy; 2022.</p>
-                    </div>
-                </div>
-            </div>       
-        </footer>
-
-        <!--Footer End-->
-
-</body>
-</html>
+    

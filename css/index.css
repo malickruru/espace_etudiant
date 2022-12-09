@@ -4,6 +4,9 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
 @import url('header.css');
 @import url('connexion.css');
+@import url('profil.css');
+@import url('modification.css');
+@import url('offre_emploi.css');
 :root{
     /* couleur */
     --color_blue : rgba(84,178,211,1 );
