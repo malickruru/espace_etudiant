@@ -1,3 +1,4 @@
+
 <header>
 <a href="index.php">
 <img src="assets/logo.png" alt="Ifran" > 
@@ -17,13 +18,21 @@
                 <li> <a href="index.php?action=ajouter_offre_emploi">Offre d'emplois</a>
            </ul>
         </li>
-       <li> <a href="index.php?action=connexion">Se connecter</a> </li>
+        <?php 
+        if ((!isset($_SESSION['login'])) || ($_SESSION['login'] == "")) {?>
+                <li> <a href="index.php?action=connexion">Se connecter</a> </li>
+       <?php } ?>
+       <?php 
+        if ((isset($_SESSION['login'])) && ($_SESSION['login'] != "")) {?>
        <li> <a href=""><i class="fa-regular fa-user"></i></a> 
            <ul>
-               <li> <a href="">Log Out</a>
+           
+               <li> <a href="index.php?action=logout">Log Out</a>
+        
                <li> <a href="index.php?action=profil">Mon profil</a>
            </ul>
        </li>
+       <?php } ?>
    </ul>
 </nav>
 <!--Fin NavBar-->

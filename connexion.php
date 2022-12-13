@@ -12,7 +12,29 @@
 		if (!$connected_etd ) {
             echo "<span style='background-color:white; color:red; font-weight:bold;'>Login ou mot de passe incorect</span>";
         }else{
-			echo "<span style='background-color:white; color:green; font-weight:bold;'>vous êtes bien connectez</span>";
+			// echo "<span style='background-color:white; color:green; font-weight:bold;'>vous êtes bien connectez</span>";
+			
+			
+			// initialisation des variable de session
+			$session_id = session_id();
+			$_SESSION['nom'] = $connected_etd['Prenoms_Etd']." ".$connected_etd['Nom_Etd'];
+			$_SESSION['email'] = $connected_etd['Email_Etd'];
+			$_SESSION['login'] = $connected_etd['Login_Etd'];
+			$_SESSION['id_etd'] = $connected_etd['Id_Etudiant'];
+			// enregistrement de la session
+			$save_session = $connexion->prepare("INSERT INTO t_sessions( Login_Session_Etd, Id_Session_Etd, Session_Start, Session_Sys_Id) 
+             VALUES (:Login_Session_Etd, :Id_Session_Etd, :Session_Start, :Session_Sys_Id)
+         ");
+         	$save_session->execute(array(
+                             ':Login_Session_Etd' => $_SESSION['login'],
+                             ':Id_Session_Etd' => $_SESSION['id_etd'],
+                             ':Session_Start' => date('d-m-Y h:i:s'),
+                             ':Session_Sys_Id' => $session_id,
+                             ));
+			// redirection de l'utilisateur à l'accueil
+			header('Location:index.php');
+			// echo $_SESSION['login'];
+			// echo $_SESSION['email'];
 		}
 	}
 ?>

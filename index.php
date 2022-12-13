@@ -1,4 +1,5 @@
 <?php 
+session_start();
 require_once('connexion/connect.inc.php');
 require_once("component/data.php");
 require_once("component/utilisateur.php");
@@ -60,6 +61,8 @@ if (isset($_GET["content"])) {
         }
         if($action == 'ajouter_offre_emploi'){
             require_once('ajouter_offre_emploi.php');
+        }if($action == 'logout'){
+            require_once('logout.php');
         }
     }
     ?>
