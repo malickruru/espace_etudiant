@@ -1,4 +1,5 @@
 <?php 
+require_once('connexion/connect.inc.php');
 require_once("component/data.php");
 require_once("component/utilisateur.php");
 require_once("component/publication.php");

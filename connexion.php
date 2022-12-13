@@ -1,18 +1,35 @@
-
+<?php 
+	if (isset($_POST['submit_conn'])) {
+		if ((trim($_POST['login']) != "") && (trim($_POST['password']) != "")) {
+			$req_login_etd = $connexion->prepare("SELECT * FROM t_etudiants WHERE (Login_Etd= :login OR Email_Etd= :courriel ) AND Password_Etd = :password ");
+        	$req_login_etd->execute(array(
+				'login' => $_POST['login'],
+				'courriel'  =>$_POST['login'],
+				'password' => sha1($_POST['password'])
+			));
+		}
+		$connected_etd = $req_login_etd->fetch();
+		if (!$connected_etd ) {
+            echo "<span style='background-color:white; color:red; font-weight:bold;'>Login ou mot de passe incorect</span>";
+        }else{
+			echo "<span style='background-color:white; color:green; font-weight:bold;'>vous êtes bien connectez</span>";
+		}
+	}
+?>
 
 <div class="container flexCenter">
 	<div class="screen">
 		<div class="screen__content">
-			<form class="login">
+			<form class="login" method="POST" action="">
 				<div class="login__field">
 					<i class="login__icon fas fa-user"></i>
-					<input type="text" class="login__input" placeholder="Nom d'utilisateur / Email">
+					<input type="text" class="login__input" name="login" id="login" placeholder="Nom d'utilisateur / Email">
 				</div>
 				<div class="login__field">
 					<i class="login__icon fas fa-lock"></i>
-					<input type="password" class="login__input" placeholder="Mot de passe">
+					<input type="password" class="login__input" name="password" id="password" placeholder="Mot de passe">
 				</div>
-				<button class="login__submit" type="submit">
+				<button name="submit_conn" class="login__submit" type="submit">
 					<span class="button__text">Connectez-vous</span>
 					<i class="button__icon fas fa-chevron-right"></i>
 				</button>				

@@ -4,7 +4,7 @@
 <?php 
         // header('Location:http://localhost/espace_etudiant/index.php');
         $mat_etd = "";
-    require_once('connexion/connect.inc.php');
+    
     if (isset($_POST['submit_mat'])) {
        
         $mat_etd = addslashes( $_POST['matricule']);
@@ -38,7 +38,7 @@
                              ':Date_Naiss_Etd' => $_POST['Date_Naiss_Etd'],
                              ':Email_Etd' => $_POST['Email_Etd'],
                              ':Login_Etd' => $_POST['Login_Etd'],
-                             ':Password_Etd' => md5($_POST['Password_Etd'])));
+                             ':Password_Etd' => sha1($_POST['Password_Etd'])));
             echo "<span style='color:green; font-weight:bold;'>Votre compte à été créer vous pouvez vous connecter</span>";
 
      }
