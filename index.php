@@ -8,6 +8,7 @@ require_once("component/emploi.php");
 require_once("component/popup.php");
 
 
+
 $action = "";
 
 if (isset($_GET["action"])) {
@@ -41,6 +42,7 @@ if (isset($_GET["content"])) {
       
         <!-- fils d'actu -->
         <?php 
+       
         if(!isset($_GET['action'])){
          require_once("component/accueil.php");   
     }else{

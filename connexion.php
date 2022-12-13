@@ -1,4 +1,5 @@
 <?php 
+
 	if (isset($_POST['submit_conn'])) {
 		if ((trim($_POST['login']) != "") && (trim($_POST['password']) != "")) {
 			$req_login_etd = $connexion->prepare("SELECT * FROM t_etudiants WHERE (Login_Etd= :login OR Email_Etd= :courriel ) AND Password_Etd = :password ");
@@ -21,14 +22,15 @@
 			$_SESSION['email'] = $connected_etd['Email_Etd'];
 			$_SESSION['login'] = $connected_etd['Login_Etd'];
 			$_SESSION['id_etd'] = $connected_etd['Id_Etudiant'];
+			$_SESSION['date'] = date('d-m-Y H:i:s');
 			// enregistrement de la session
 			$save_session = $connexion->prepare("INSERT INTO t_sessions( Login_Session_Etd, Id_Session_Etd, Session_Start, Session_Sys_Id) 
-             VALUES (:Login_Session_Etd, :Id_Session_Etd, :Session_Start, :Session_Sys_Id)
+             VALUES (:Login_Session_Etd, :Id_Session_Etd, NOW(), :Session_Sys_Id)
          ");
          	$save_session->execute(array(
                              ':Login_Session_Etd' => $_SESSION['login'],
                              ':Id_Session_Etd' => $_SESSION['id_etd'],
-                             ':Session_Start' => date('d-m-Y h:i:s'),
+                             
                              ':Session_Sys_Id' => $session_id,
                              ));
 			// redirection de l'utilisateur à l'accueil
