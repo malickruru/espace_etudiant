@@ -59,7 +59,7 @@ if (isset($_GET["content"])) {
             require_once('profil.php');
         }
         if($action == 'modifier_profil'){
-            require_once('modification.php');
+            require_once('creation_profil.php');
         }
         if($action == 'ajouter_offre_emploi'){
             require_once('ajouter_offre_emploi.php');

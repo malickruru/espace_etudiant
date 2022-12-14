@@ -1,5 +1,16 @@
 <?php
     include("component/element-profil.php");
+    $req_select_profil = $connexion->prepare("SELECT * FROM t_etudiants WHERE Id_Etudiant = :id_etd "); 
+    $req_select_profil->execute(array(
+        ':id_etd' => $_SESSION['id_etd']
+        ));
+    $profil = $req_select_profil->fetch();
+    if (!$profil){
+        header('Location:index.php');
+    }else{
+
+        
+    
 ?>
 
 <!--Corps de la page-->
@@ -107,5 +118,5 @@
     </div>
 </div>
 
-
+<?php } ?>
 
