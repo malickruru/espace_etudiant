@@ -39,8 +39,10 @@
                              ':Email_Etd' => $_POST['Email_Etd'],
                              ':Login_Etd' => $_POST['Login_Etd'],
                              ':Password_Etd' => sha1($_POST['Password_Etd'])));
+
             echo "<span style='color:green; font-weight:bold;'>Votre compte à été créer vous pouvez vous connecter</span>";
 
+            
      }
            
     //  catch(PDOException $e){
