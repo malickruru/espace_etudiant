@@ -16,12 +16,10 @@ function SelectAll($table){
 
 // selectionner les enregistrements avec une clause where personalisée
 
-function SelectWhere($table,$champ,$value){
+function SelectWhere($table,$condition){
     global $connexion;
-    $req = $connexion->prepare("SELECT * FROM $table WHERE $champ = :value");
-    $req->execute(array(
-        'value' => $value,
-    ));
+    $req = $connexion->prepare("SELECT * FROM $table WHERE $condition");
+    $req->execute();
     return $req -> fetch();
 }
 
