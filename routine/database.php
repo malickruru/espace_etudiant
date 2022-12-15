@@ -8,7 +8,7 @@ include('./connexion/connect.inc.php');
 
 function SelectAll($table){
     global $connexion;
-    $req = $connexion->prepare("SELECT * FROM $table ");
+    $req = $connexion->prepare("SELECT * FROM $table");
     $req->execute();
     return $req -> fetchAll();
 }
@@ -16,10 +16,12 @@ function SelectAll($table){
 
 // selectionner les enregistrements avec une clause where personalisée
 
-function SelectWhere($table,$condition){
+function SelectWhere($table,$champ,$value){
     global $connexion;
-    $req = $connexion->prepare("SELECT * FROM $table WHERE $condition");
-    $req->execute();
+    $req = $connexion->prepare("SELECT * FROM $table WHERE $champ = :value");
+    $req->execute(array(
+        'value' => $value,
+    ));
     return $req -> fetch();
 }
 

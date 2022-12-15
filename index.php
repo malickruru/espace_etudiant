@@ -6,9 +6,14 @@ require_once("component/utilisateur.php");
 require_once("component/publication.php");
 require_once("component/emploi.php");
 require_once("component/popup.php");
+require_once("routine/database.php");
+require_once("routine/upload.php");
 
-
-
+$p_sess = $_SESSION['id_etd'];
+$req_count_profil = $connexion ->query("SELECT COUNT(Id_Profil) AS nbr_profil FROM t_profils WHERE Id_Etd_Profil = $p_sess");
+$count_profil = $req_count_profil->execute();
+$count_profil = $req_count_profil->fetch();
+$profil_exist = $count_profil["nbr_profil"];
 $action = "";
 
 if (isset($_GET["action"])) {
