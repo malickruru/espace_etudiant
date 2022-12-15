@@ -27,7 +27,7 @@ function textFormater($text){
 
 ?>
 
-<?php function publication($userData,$id_user,$id,$type,$src,$date,$titre,$description,$commentData,){
+<?php function publication($userData,$id_user,$id,$type,$src,$date,$titre,$description,$commentData){
 ?>
 
 <style>
