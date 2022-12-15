@@ -8,16 +8,19 @@ function uploadFile($file){
 }
 
 
-function uploadImg($file,$url){
+function uploadImg($file){
     $tmp_nom = $file['tmp_name'];
-    move_uploaded_file($tmp_nom,'images/profils/'.uploadFile($file));
     $url = 'images/profils/'.uploadFile($file);
+    //move_uploaded_file($tmp_nom,'images/profils/'.uploadFile($file));
+    move_uploaded_file($tmp_nom,$url);
+    return $url; 
 }
 
-function uploadCv($file,$url){
+function uploadCv($file){
     $tmp_nom = $file['tmp_name'];
-    move_uploaded_file($tmp_nom,'files/cv/'.uploadFile($file));
     $url = 'files/cv/'.uploadFile($file);
+    move_uploaded_file($tmp_nom,'files/cv/'.uploadFile($file));
+    return $url; 
 }
 
 

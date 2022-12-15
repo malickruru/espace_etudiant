@@ -28,8 +28,11 @@
            <ul>
            
                <li> <a href="index.php?action=logout">Log Out</a>
-        
-               <li> <a href="index.php?action=profil">Mon profil</a>
+                <?php if($profil_exist == 1) { ?>
+               <li> <a href="index.php?action=profil&profil=<?php echo $_SESSION['id_etd'] ?>">Mon profil</a>
+               <?php }else{  ?>
+                <li> <a href="index.php?action=ajout_profil">Mon profil</a>
+                <?php } ?>
            </ul>
        </li>
        <?php } ?>

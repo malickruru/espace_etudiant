@@ -1,54 +1,28 @@
 <?php
     include("component/element-profil.php");
-    //Upload de la photo de profil
-    $nom_img = "";
-    $nom_cv = "";
-
-    
-    // $list_classe = $connexion -> exec("SELECT * FROM t_classes");
-    // $list_spe = $connexion -> exec("SELECT * FROM t_specialites");
 
     if (isset($_POST['submit_profil'])) {
-        //Upload de la photo de profil 
-        if(!empty($_POST['img_profil'])) {
-            $tmp_nom = $_FILES['img_profil']['tmp_name'];
-            $img_ext = explode('.',$tmp_nom)[1];
-            $alea = rand(1, 100000);
-            $nom_img = 1000*$_SESSION['id_etd'].$alea;
-            $nom_img = $nom_img.$img_ext;
-            move_uploaded_file($tmp_nom,'images/profils/'.$nom_img);
-        }
-    
-
-    //Upload du Cv
-
-        //Upload de la photo de profil 
-        if(!empty($_POST['mon_cv'])) {
-            $tmp_cv = $_FILES['mon_cv']['tmp_name'];
-            $cv_ext = explode('.',$tmp_cv)[1];
-            $alea = rand(1, 100000);
-            $nom_cv = 1000*$_SESSION['id_etd'].$alea;
-            $nom_cv = $nom_cv.$cv_ext;
-            move_uploaded_file($tmp_cv, 'files/cv/'.$nom_cv);
-        }
-
-    
-
-    $req_ajout_profil = $connexion->prepare("INSERT INTO t_profils (Id_Etd_Profil, Photo_Profil, Numero_Tel, Numero_Whatsapp, Code_Classe_Profil, Code_Spe_Profil, Bio_Profil, Interets_Profil, Annee_Entree, Cv_Profil, Couleur_Profil) 
-    VALUES(:Id_Etd_Profil, :Photo_Profil, :Numero_Tel, :Numero_Whatsapp, :Code_Classe_Profil, :Code_Spe_Profil, :Bio_Profil, :Interets_Profil, :Annee_Entree, :Cv_Profil, :Couleur_Profil)"); 
-    $req_ajout_profil->execute(array(
+       $url_img = uploadImg($_FILES['img_profil']);
+       $url_cv = uploadCv($_FILES['mon_cv']);
+    //---Envoi de Requête pour insérer des éléménts dans la table profils---
+    $tab_profils = [
         'Id_Etd_Profil' => $_SESSION['id_etd'],
-        'Photo_Profil'  =>'images/profils/'.$nom_img,
         'Numero_Tel' => $_POST['tel'],
+        'Photo_Profil'  => $url_img,
         'Numero_Whatsapp' => $_POST['WhatsApp'],
         'Code_Classe_Profil'  =>$_POST['classe'],
         'Code_Spe_Profil' => $_POST['specialite'],
         'Bio_Profil' => $_POST['bio'],
         'Interets_Profil'  =>$_POST['interet'],
         'Annee_Entree' => $_POST['annee'],
-        'Cv_Profil'  =>'files/cv/'.$nom_cv,
-        'Couleur_Profil' => $_POST['couleur']
-    ));
+        'Couleur_Profil' => $_POST['couleur'],
+        'Cv_Profil'  => $url_cv
+    ];
+    //Insert("t_profils", $tab_profils);
+    if(Insert("t_profils", $tab_profils)){
+        echo "<script>alert('Envoi réussi')</script>";
+    }
+    // var_dump(SelectAll("t_profils")); 
 }
 ?>
 
@@ -118,9 +92,11 @@
                             Classe
                             <select name="classe" id="classe">
                             <option value="">Sélectionnez</option>
-                                <?php
-                                  
-                                ?>
+                            <?php 
+                                $classe = SelectAll("t_classes");
+                                foreach($classe as $c){ ?>  
+                                    <option value="<?php echo $c["Code_Classe"];?>"><?php echo $c["Libelle_Classe"];?></option> 
+                                 <?php } ?> 
                             </select>
                         </label>
                     </div>
@@ -129,9 +105,11 @@
                             Spécialité
                             <select name="specialite" id="specialite">
                             <option value="">Sélectionnez</option>
-                                <?php
-                                  
-                                ?>
+                            <?php 
+                                $spec = SelectAll("t_specialites");
+                                foreach($spec as $sp){ ?>  
+                                    <option value="<?php echo $sp["Code_Specialite"];?>"><?php echo $sp["Libelle_Specialite"];?></option> 
+                                 <?php } ?> 
                             </select>
                         </label>
                     </div>
@@ -140,15 +118,11 @@
                             Année d'entrée à l'IFRAN
                             <select name="annee" id="annee">
                             <option value="">Sélectionnez</option>
-                                <?php
-                                $list_annee = $connexion -> prepare("SELECT * FROM t_annees");
-                                $list_annee->execute();
-                               
-                                while($annee = $list_annee->fetch()){
-                                    // var_dump($annee);
-                                    echo $annee["Annee"];
-                                 ?>  
-                            <option value="<?php echo $annee['Annee']; ?>"><?php echo $annee['Annee']; ?></option>
+                                
+                                <?php 
+                                $annee = SelectAll("t_annees");
+                                foreach($annee as $a){ ?>  
+                                    <option value="<?php echo $a["Annee"];?>"><?php echo $a["Annee"];?></option> 
                                  <?php } ?> 
                                 
                             </select>
@@ -172,3 +146,4 @@
     </div>
 </div>
 
+<?php var_dump($annee); ?>
