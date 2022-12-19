@@ -8,13 +8,20 @@ require_once("component/emploi.php");
 require_once("component/popup.php");
 require_once("routine/database.php");
 require_once("routine/upload.php");
+require_once("routine/redirect.php");
 
-$p_sess = $_SESSION['id_etd'];
+if(isset($_SESSION['id_etd'])){
+    $p_sess = $_SESSION['id_etd'];
 $req_count_profil = $connexion ->query("SELECT COUNT(Id_Profil) AS nbr_profil FROM t_profils WHERE Id_Etd_Profil = $p_sess");
 $count_profil = $req_count_profil->execute();
 $count_profil = $req_count_profil->fetch();
 $profil_exist = $count_profil["nbr_profil"];
 $action = "";
+}else{
+    $profil_exist = 0;
+}
+
+
 
 if (isset($_GET["action"])) {
     $action = $_GET["action"];
@@ -51,27 +58,35 @@ if (isset($_GET["content"])) {
         if(!isset($_GET['action'])){
          require_once("component/accueil.php");   
     }else{
-        if($action == 'connexion'){
-            require_once('connexion.php');
-        }
-        if($action == 'creer_compte'){
-            require_once('creer_compte.php');
-        }
-        if($action == 'mdp_oublie'){
-            require_once('mdp_oublie.php');
-        }
-        if($action == 'profil'){
-            require_once('profil.php');
-        }
-        if($action == 'modifier_profil'){
-            require_once('creation_profil.php');
-        }
-        if($action == 'ajouter_offre_emploi'){
-            require_once('ajouter_offre_emploi.php');
-        }if($action == 'logout'){
-            require_once('logout.php');
-        }
+        // if($action == 'connexion'){
+        //     require_once('connexion.php');
+        // }
+        // if($action == 'creer_compte'){
+        //     require_once('creer_compte.php');
+        // }
+        // if($action == 'mdp_oublie'){
+        //     require_once('mdp_oublie.php');
+        // }
+        // if($action == 'profil'){
+        //     require_once('profil.php');
+        // }
+        // if($action == 'modifier_profil'){
+        //     require_once('creation_profil.php');
+        // }
+        // if($action == 'ajouter_offre_emploi'){
+        //     require_once('ajouter_offre_emploi.php');
+        // }
+        // if($action == 'logout'){
+        //     require_once('logout.php');
+        // }
+        // if($action == 'ajout_profil'){
+        //     require_once('ajout_profil.php');
+        // }
+            redirect($action);
     }
+
+      
+
     ?>
         
         

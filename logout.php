@@ -5,7 +5,6 @@ $req_logout_etd = $connexion->prepare("UPDATE t_sessions SET Session_End= NOW() 
 				'session_id'  =>session_id()
 			));
 
-
 session_destroy();
 header('Location:index.php');
 ?>
