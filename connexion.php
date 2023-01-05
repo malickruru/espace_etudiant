@@ -23,7 +23,7 @@
 			$_SESSION['login'] = $connected_etd['Login_Etd'];
 			$_SESSION['id_etd'] = $connected_etd['Id_Etudiant'];
 			$_SESSION['date'] = date('d-m-Y H:i:s');
-			$_SESSION['matricule'] = $connected_etd['Matricule_Etd'];
+			$_SESSION['matricule'] = $connected_etd['Mat_Etd'];
 			// enregistrement de la session
 			$save_session = $connexion->prepare("INSERT INTO t_sessions( Login_Session_Etd, Id_Session_Etd, Session_Start, Session_Sys_Id) 
              VALUES (:Login_Session_Etd, :Id_Session_Etd, NOW(), :Session_Sys_Id)

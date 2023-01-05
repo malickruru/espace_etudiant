@@ -44,27 +44,31 @@ function Insert($table,$arr){
 }
 // UPDATE
 
-function Update($table,$arr,$whereKey,$whereValue){
-    global $connexion;
-    $data = "";
+// function Update($table,$arr,$whereKey,$whereValue,$type){
+//     global $connexion;
+//     $data = "";
+//     $champ = "";
     
 
-    foreach ($arr as $key => $value) {
-        $data .= " $key = $value,";
-    }  
-    $data = rtrim($data,',');
+//     foreach ($arr as $key => $value) {
+//         $champ .= " $key = ? ,";
+//         $data .= " $value ,";
+//     }  
+//     $champ = rtrim($champ,',');
+//     $data = rtrim($data,',');
+
+//     echo "UPDATE $table SET $data WHERE $whereKey = $whereValue";
     
-    $req = $connexion->prepare("UPDATE $table SET $data WHERE $whereKey = $whereValue");
-    $req->execute($arr);
-    
-}
+//     $req = $connexion->prepare("UPDATE $table SET $champ WHERE $whereKey = $whereValue");
+//     $req->bind_param($type,)
+//     $req->execute($arr);
+     
+// }
 
 // DELETE
 
 function Delete($table,$whereKey,$whereValue){
     global $connexion;
-    
-    
     $req = $connexion->prepare("DELETE FROM $table WHERE $whereKey = $whereValue");
     $req->execute();
     

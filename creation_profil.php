@@ -1,5 +1,4 @@
 <?php
-    include("component/element-profil.php");
 
     if (isset($_POST['submit_profil'])) {
        $url_img = uploadImg($_FILES['img_profil']);
@@ -18,11 +17,11 @@
         'Couleur_Profil' => $_POST['couleur'],
         'Cv_Profil'  => $url_cv
     ];
-    //Insert("t_profils", $tab_profils);
+    // Insert("t_profils", $tab_profils);
     if(Insert("t_profils", $tab_profils)){
-        echo "<script>alert('Envoi réussi')</script>";
+        echo '<script>alert("Création de compte réussie !")</script>';
     }
-    // var_dump(SelectAll("t_profils")); 
+    header('Location:index.php');
 }
 ?>
 
@@ -31,28 +30,24 @@
     <div class="row">
         <!--lien pour revenir à la page de profil-->
         <div class="col-lg-5 col-md-12 col-sm-12">
-        <a href="index.php?action=profil" class="retour FlexStart">
-        <i class="fa-solid fa-chevron-left"></i>
-        <h3>Revenir à mon profil</h3>
-        </a>
         <!--Titre et instructions-->
         <div class="title-profil">
-            <h2>Mon profil</h2>
-            <h4>Gérez les paramètres de votre profil</h4>
+            <h2>Créez votre profil</h2>
+            <h4>Renseignez les champs ci-dessous afin de créer votre profil</h4>
         </div>
-        <!--Formulaire de modification de données-->
+        <!--Formulaire de c de données-->
             <form class="formulaire" id="form" action="" method="POST" enctype="multipart/form-data">
-                <!-- modification de la pdp-->
+                <!-- la pdp-->
                 <div class="picture">
                     <h3>Votre photo de profil</h3>
                         <div class="p-pic" style="position:unset;">
-                            <img src="<?php //echo $donnees["cle_photo"]?>" alt="#">
+                            <img src="" alt="#">
                         </div>  
                         <div class="btnUpload">
                             <input type="file" class="fileBtn" name="img_profil" id="img_profil">
                         </div>
                 </div>
-                <!-- modification de la couleur de la bannière-->
+                <!-- la couleur de la bannière-->
                 <div class="cover my-3">
                     <h3>Bannière de profil</h3>
                     <div class="cover-wrapper">
@@ -81,11 +76,11 @@
                     <h3>Informations du profil</h3> 
                     <div class="input-wrapper">
                         <label for="name">Numéro de téléphone</label>
-                        <input type="tel" name="tel" id="tel"placeholder="ex: 0102061311" value="<?php echo $donnees["cle_tel"]?>" >
+                        <input type="tel" name="tel" id="tel"placeholder="ex: 0102061311" value="" >
                     </div>
                     <div class="input-wrapper">
                         <label for="name">Numéro WhatsApp</label>
-                        <input type="tel" name="WhatsApp" id="WhatsApp" placeholder="ex: 0102061311" value="<?php echo $donnees["cle_tel"]?>" >
+                        <input type="tel" name="WhatsApp" id="WhatsApp" placeholder="ex: 0102061311" value="" >
                     </div>
                     <div class="input-wrapper">
                         <label for="classe" class="custom-select">
@@ -131,14 +126,14 @@
                     
                     <div class="input-wrapper">
                         <label for="name">Biographie</label>
-                        <textarea id="bio" placeholder="Ecrivez votre bio..." name="bio" rows="4" cols="40" maxlength="300"><?php echo $donnees["cle_bio"]?></textarea>
+                        <textarea id="bio" placeholder="Ecrivez votre bio..." name="bio" rows="4" cols="40" maxlength="300"></textarea>
                     </div>
                     <div class="input-wrapper">
                         <label for="name">Centres d'intérêts</label>
-                        <textarea id="interet" placeholder="Ecrivez vos centres d'intérêts..." name="interet" rows="4" cols="40" maxlength="1900"><?php echo $donnees["cle_hobbies"]?></textarea>
+                        <textarea id="interet" placeholder="Ecrivez vos centres d'intérêts..." name="interet" rows="4" cols="40" maxlength="1900"></textarea>
                     </div>      
                 </div>
-                <button type="submit" class="btnSubmit" name="submit_profil" id="submit_profil">Enregistrer les modifications</button>
+                <button type="submit" class="btnSubmit" name="submit_profil" id="submit_profil">Confirmer</button>
             </form>
         </div>
        
@@ -146,4 +141,3 @@
     </div>
 </div>
 
-<?php var_dump($annee); ?>

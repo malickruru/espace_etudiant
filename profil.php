@@ -1,8 +1,6 @@
 <?php
 
-include('component/element-profil.php');
-
-$mon_profil = SelectWhere("t_profils", "Id_Profil", $_GET["profil"]);
+$mon_profil = SelectWhere("t_profils", "Id_Etd_Profil", $_GET["profil"]);
 
 ?>
 
@@ -21,7 +19,7 @@ $mon_profil = SelectWhere("t_profils", "Id_Profil", $_GET["profil"]);
                     <!--Bannière du profil (contiendra la photo de profil et le statut)-->
                     <div class="banner">
                         <div class="p-pic">
-                        <img src="<?php echo $mon_profil["Photo_Profil"]; ?>" alt="#">
+                        <img src="<?php echo $mon_profil["Photo_Profil"];?>" alt="#">
                         </div>
                         <div class="p-status p-status-online"></div>
                     </div>
@@ -66,7 +64,7 @@ $mon_profil = SelectWhere("t_profils", "Id_Profil", $_GET["profil"]);
                             </div>
                             <div class="p-mail my-2" id="p-mail">
                                 <i class="fa-sharp fa-solid fa-envelope"></i>
-                                <a href="mailto:emmaDuBois121212@gmail.com"><?php echo $_SESSION['email']; ?></a>
+                                <a href="mailto:<?php echo $_SESSION['email'] ;?>"><?php echo $_SESSION['email']; ?></a>
                             </div>
                         </div>
                     </div>
@@ -93,9 +91,9 @@ $mon_profil = SelectWhere("t_profils", "Id_Profil", $_GET["profil"]);
                         <div class="activity-comment">
                             <div class="infos">
                                <div class="img-user">
-                               <img src="assets/test.jpg" alt="#">
+                               <img src="<?php echo $mon_profil["Photo_Profil"];?>" alt="#">
                                </div>
-                               <p class="username mx-2">Emily Dubois</p>
+                               <p class="username mx-2"><?php echo $_SESSION['nom'];?></p>
                                <p class="indicator">a commenté un post</p>
                                <div class="time-indicator flexSpaceAround"><i class="fa-solid fa-circle mx-2"></i><p>2h</p></div>
                             </div>
@@ -106,9 +104,9 @@ $mon_profil = SelectWhere("t_profils", "Id_Profil", $_GET["profil"]);
                         <div class="activity-comment">
                             <div class="infos">
                                <div class="img-user">
-                               <img src="assets/test.jpg" alt="#">
+                               <img src="<?php echo $mon_profil["Photo_Profil"];?>" alt="#">
                                </div>
-                               <p class="username mx-2">Emily Dubois</p>
+                               <p class="username mx-2"><?php echo $_SESSION['nom'];?></p>
                                <p class="indicator" id="comment-post">a commenté un post</p>
                                <div class="time-indicator flexSpaceAround"><i class="fa-solid fa-circle mx-2"></i><p>4j</p></div>
                             </div>
@@ -120,14 +118,14 @@ $mon_profil = SelectWhere("t_profils", "Id_Profil", $_GET["profil"]);
                         <div class="activity-post">
                             <div class="infos">
                                <div class="img-user">
-                               <img src="assets/test.jpg" alt="#">
+                               <img src="<?php echo $mon_profil["Photo_Profil"];?>" alt="#">
                                </div>
-                               <p class="username mx-2">Emily Dubois</p>
+                               <p class="username mx-2"><?php echo $_SESSION['nom'];?></p>
                                <p class="indicator" id="post">a publié un post</p>
                                <div class="time-indicator flexSpaceAround"><i class="fa-solid fa-circle mx-2"></i><p>12j</p></div>
                             </div>
                             <div class="description">
-                              <p>Voici une image que j'ai prise moi-même ! je suis assez fière du résultat &#128512;</p>
+                              <p>Voici une image que j'ai pris moi-même ! je suis assez fier du résultat &#128512;</p>
                             </div>  
                             <div class="media my-3">
                                 <!--Peut être une image ou une vidéo-->
@@ -149,7 +147,7 @@ $mon_profil = SelectWhere("t_profils", "Id_Profil", $_GET["profil"]);
 
                         <div class="modify-profile" id="modify-profile">
                             <i class="fa-solid fa-gear mx-3"></i>  
-                            <a href="index.php?action=modifier_profil" class="">Modifier le profil</a>
+                            <a href="index.php?action=modifier_profil&modif_profil=<?php echo $_SESSION['id_etd']?>">Modifier Profil</a>
                         </div>
                             <hr class="hr-option">
                         <div class="log-out" id="log-out">

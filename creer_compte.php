@@ -21,8 +21,6 @@
         }else{
         $nom_etd = $row_mat_etd['Nom_Etd_Mat'] ;
         $prenom_etd = $row_mat_etd['Prenom_Etd_Mat'] ;
-        //  @header("Location:creer_compte.php?nom=$nom_etd&prenom=$prenom_etd&matricule=$mat_etd");
-
         }}
        
         if(isset($_POST['Submit_Etd'])) {

@@ -85,8 +85,6 @@ if (isset($_GET["content"])) {
             redirect($action);
     }
 
-      
-
     ?>
         
         

@@ -31,7 +31,7 @@
                 <?php if($profil_exist == 1) { ?>
                <li> <a href="index.php?action=profil&profil=<?php echo $_SESSION['id_etd'] ?>">Mon profil</a>
                <?php }else{  ?>
-                <li> <a href="index.php?action=ajout_profil">Ajouter un profil</a>
+                <li> <a href="index.php?action=creation_profil">Ajouter un profil</a>
                 <?php } ?>
            </ul>
        </li>
