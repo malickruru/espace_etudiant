@@ -13,6 +13,15 @@ function SelectAll($table){
     return $req -> fetchAll();
 }
 
+function SelectRecordPerPage($table,$limit,$page){
+    global $connexion;
+    $skip = ($page-1)*$limit;
+    $req = $connexion->prepare("SELECT * FROM $table LIMIT $skip , $limit ");
+    $req->execute();
+    return $req -> fetchAll();
+}
+
+
 
 // selectionner les enregistrements avec une clause where personalisée
 
@@ -32,15 +41,16 @@ function Insert($table,$arr){
     $param = "";
 
     foreach ($arr as $key => $value) {
+        
         $champ .= " $key ,";
         $param .= " :$key ,";
     }  
     $champ = rtrim($champ,',');
     $param = rtrim($param,',');
    
+    
     $req = $connexion->prepare("INSERT INTO $table ( $champ ) VALUES ( $param )");
     $req->execute($arr);
-    
 }
 // UPDATE
 

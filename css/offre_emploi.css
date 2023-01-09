@@ -64,6 +64,17 @@ form .Informations-personnelles .input-box{
    transition: all 0.3s ease;
 }
 
+.Informations-personnelles .input-box textarea{
+   width: 100%;
+   outline: none;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   padding-left: 15px;
+   font-size: 14px;
+   border-bottom-width: 2px ;
+   transition: all 0.3s ease;
+}
+
 .Informations-personnelles .input-box input:focus,
 .Informations-personnelles .input-box input:valid{
    border-color: rgb(221,82,120);
