@@ -58,10 +58,14 @@ if (isset($_GET["content"])) {
         <?php 
        
         if(!isset($_GET['action'])){
-         require_once("component/accueil.php");   
-    }else{
+            if(isset($_GET['publication'])){
+                require_once("publication.php");
+            }else{
+                require_once("component/accueil.php");  
+            }
+        }else{
             redirect($action);
-    }
+        }
 
     ?>
 

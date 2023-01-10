@@ -5,7 +5,7 @@ if ($content == 'publication') {
  $article = SelectRecordPerPage('t_posts_etd',3,1);
 
             foreach ($article as $item ) {
-                publication($_SESSION['id_etd'],$item['Image_Post'],$item['Date_Post'],$item['Titre_Post'],$item['Message_Post']);
+                publication($item['Id_Etd_Post'],$item['Image_Post'],$item['Date_Post'],$item['Titre_Post'],$item['Message_Post']);
             }
         }else{
             // foreach ($emploi as $item) {
