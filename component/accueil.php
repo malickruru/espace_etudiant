@@ -1,22 +1,20 @@
 <?php 
+$page=1;
+    
+if (isset($_GET['page'])) {
+    $page = $_GET['page'];
+}
 
 if ($content == 'publication') {
-    $page=1;
-    
-    if (isset($_GET['page'])) {
-        $page = $_GET['page'];
-    }
 
-    
  $article = SelectRecordPerPage('t_posts_etd',3,$page);
 
             foreach ($article as $item ) {
                 publication($item['Id_Etd_Post'],$item['Image_Post'],$item['Date_Post'],$item['Titre_Post'],$item['Message_Post']);
             }
+            
         }else{
-            // foreach ($emploi as $item) {
-            //    emploi($item['titre'],$item['text']);
-            // }
+            
             echo 'code en maintenance';
         }
         ?>
