@@ -2,6 +2,7 @@
 session_start();
 require_once('connexion/connect.inc.php');
 // require_once("component/data.php");
+require_once("component/page.php");
 require_once("component/utilisateur.php");
 require_once("component/publication.php");
 require_once("component/emploi.php");

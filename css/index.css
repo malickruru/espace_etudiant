@@ -18,3 +18,15 @@
 }
 
 
+.page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.page a,.page p{
+    background-color: #fff;
+    padding: 10px;
+    color: #000;
+    font-size: 15px;
+}

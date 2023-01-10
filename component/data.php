@@ -1,7 +1,5 @@
 <?php 
 
-
-
 $utilisateur = [
     array(
         "id"=>"1",

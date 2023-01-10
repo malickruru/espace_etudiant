@@ -1,8 +1,14 @@
 <?php 
 
 if ($content == 'publication') {
+    $page=1;
+    
+    if (isset($_GET['page'])) {
+        $page = $_GET['page'];
+    }
 
- $article = SelectRecordPerPage('t_posts_etd',3,1);
+    
+ $article = SelectRecordPerPage('t_posts_etd',3,$page);
 
             foreach ($article as $item ) {
                 publication($item['Id_Etd_Post'],$item['Image_Post'],$item['Date_Post'],$item['Titre_Post'],$item['Message_Post']);
@@ -35,5 +41,10 @@ if ($content == 'publication') {
                 ?>
         </div> -->
 
+</div>
+<div class='page'>
+    <a href="?page=<?php echo previousPage($page) ?>">&laquo;</a>
+    <p><?php echo  $page ?></p>
+    <a href="?page=<?php echo nextPage($page) ?>">&raquo;</a>
 </div>
 </div>
