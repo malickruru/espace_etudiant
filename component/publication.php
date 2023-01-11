@@ -32,7 +32,7 @@ function textFormater($text){
 
 ?>
 
-<?php function publication($id_user,$src,$date,$titre,$description,$type='photo'){
+<?php function publication($id_pulication,$id_user,$src,$date,$titre,$description,$type='photo'){
 ?>
 
 <style>
@@ -59,7 +59,9 @@ p {
         <div class="publication_right">
             <div class="publication_action ">
                 <div class="my">
-                    <i class="fa-solid fa-share-nodes"></i>
+                    <a href="whatsapp://send?text=<?php echo urlencode('http://' . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"] . '?publication='.$id_pulication); ?>"
+                        data-action="share/whatsapp/share"><i class="fa-solid fa-share-nodes"></i></a>
+
                 </div>
 
 

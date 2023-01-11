@@ -10,7 +10,7 @@ if ($content == 'publication') {
  $article = SelectRecordPerPage('t_posts_etd',3,$page);
 
             foreach ($article as $item ) {
-                publication($item['Id_Etd_Post'],$item['Image_Post'],$item['Date_Post'],$item['Titre_Post'],$item['Message_Post']);
+                publication($item['Id_Post'],$item['Id_Etd_Post'],$item['Image_Post'],$item['Date_Post'],$item['Titre_Post'],$item['Message_Post']);
             }
             
         }else{
