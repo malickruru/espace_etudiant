@@ -12,7 +12,11 @@ function getProfilePic($id){
         return SelectWhere('t_profils','Id_Etd_Profil',$id)['Photo_Profil'];
         }
 
+function url_format($url){
+    return explode('?',$url);
+}
 
+        
 // function getCommentById($id,$data,$users ){
 //     $comment = [];
 //     foreach ( $data as $com ) {
@@ -59,7 +63,7 @@ p {
         <div class="publication_right">
             <div class="publication_action ">
                 <div class="my">
-                    <a href="whatsapp://send?text=<?php echo urlencode('http://' . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"] . '?publication='.$id_pulication); ?>"
+                    <a href="whatsapp://send?text=<?php echo urlencode('http://' . $_SERVER["SERVER_NAME"] . url_format($_SERVER["REQUEST_URI"])[0] . '?publication='.$id_pulication); ?>"
                         data-action="share/whatsapp/share"><i class="fa-solid fa-share-nodes"></i></a>
 
                 </div>
