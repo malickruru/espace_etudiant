@@ -59,7 +59,7 @@ p {
         <div class="publication_right">
             <div class="publication_action ">
                 <div class="my">
-                    <a href="whatsapp://send?text=<?php echo urlencode('http://' . $_SERVER["SERVER_NAME"] . 'index.php' . '?publication='.$id_pulication); ?>"
+                    <a href="whatsapp://send?text=<?php echo urlencode('http://' . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"] . '?publication='.$id_pulication); ?>"
                         data-action="share/whatsapp/share"><i class="fa-solid fa-share-nodes"></i></a>
 
                 </div>
