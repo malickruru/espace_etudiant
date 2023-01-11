@@ -84,10 +84,10 @@ $mon_profil = SelectWhere("t_profils", "Id_Etd_Profil", $_GET["profil"]);
                         <p><?php echo $mon_profil["Interets_Profil"];?></p>
                     </div>
                     <!--Cette div va afficher l'historique des posts et commentaires de l'utilisateur-->
-                  <div class="activity">
+                    <!--<div class="activity">
                         <h2>Activité</h2>
                         <div class="wrapper-activity">
-                             <!--Pour les commentaires que l'utilisateur a envoyé-->
+                            
                         <div class="activity-comment">
                             <div class="infos">
                                <div class="img-user">
@@ -114,7 +114,7 @@ $mon_profil = SelectWhere("t_profils", "Id_Etd_Profil", $_GET["profil"]);
                               <p>Félicitations ! vu tout ton travail abattu, tu mérites ce prix &#128513;</p>
                             </div>                            
                         </div>
-                         <!--Pour les posts que l'utilisateur a envoyé-->
+                         
                         <div class="activity-post">
                             <div class="infos">
                                <div class="img-user">
@@ -128,7 +128,7 @@ $mon_profil = SelectWhere("t_profils", "Id_Etd_Profil", $_GET["profil"]);
                               <p>Voici une image que j'ai pris moi-même ! je suis assez fier du résultat &#128512;</p>
                             </div>  
                             <div class="media my-3">
-                                <!--Peut être une image ou une vidéo-->
+                                
                                 <a href="assets/photo.jpg"><img src="assets/photo.jpg" alt="photographie"></a>
                             </div>                         
                         </div>
@@ -136,7 +136,7 @@ $mon_profil = SelectWhere("t_profils", "Id_Etd_Profil", $_GET["profil"]);
                         <div class="see-more">
                             <a href="#">Afficher toute l'activité</a><i class="fa-solid fa-arrow-right mx-2"></i>
                         </div>
-                  </div>
+                  </div>-->
                 </div>
                 <div class="col-sm-4">
                 <?php
@@ -152,7 +152,7 @@ $mon_profil = SelectWhere("t_profils", "Id_Etd_Profil", $_GET["profil"]);
                             <hr class="hr-option">
                         <div class="log-out" id="log-out">
                             <i class="fa-solid fa-right-from-bracket mx-3"></i>
-                            <a href="#" class="fs-5">Déconnexion</a>
+                            <a href="index.php?action=logout" class="fs-5">Déconnexion</a>
                         </div>
 
                       
@@ -163,7 +163,7 @@ $mon_profil = SelectWhere("t_profils", "Id_Etd_Profil", $_GET["profil"]);
                   <div class="download-cv">
                         <h3 class="mt-2">Télécharger le CV<i class="fa-solid fa-download mx-2"></i></h3>
                         <div class=" download-link flexSpaceAround">
-                          <a href="<?php echo $mon_profil["Cv_Profil"] ?>">--> Cliquez Ici pour télécharger <--</a>
+                          <a href="<?php echo $mon_profil["Cv_Profil"]?>">--> Cliquez Ici pour télécharger <--</a>
                         </div>
                   </div>
             

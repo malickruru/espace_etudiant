@@ -34,7 +34,7 @@ if ($content == 'publication') {
         <div class="overflow_y_scroll">
             <?php 
                     // foreach ($utilisateur as $user ) {
-                    //     utilisateur($user['image'],$user["nom"],$user["tel"],$user["mail"] );
+                    //  utilisateur($user['image'],$user["nom"],$user["tel"],$user["mail"] );
                     // }
                 ?>
         </div> -->

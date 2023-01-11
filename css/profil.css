@@ -40,10 +40,9 @@ body{
       width: 100%;
       margin-top: 10%;
       margin-bottom: 2%;
-      min-height: 700px;
+      min-height: 600px;
       overflow: hidden;
       position:relative;
-      
     }
 
   .banner{
