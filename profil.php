@@ -17,7 +17,7 @@ $mon_profil = SelectWhere("t_profils", "Id_Etd_Profil", $_GET["profil"]);
             <div class="col-sm-8">
                 <div class="head-profile">
                     <!--Bannière du profil (contiendra la photo de profil et le statut)-->
-                    <div class="banner">
+                    <div class="banner" id="banner">
                         <div class="p-pic">
                         <img src="<?php echo $mon_profil["Photo_Profil"];?>" alt="#">
                         </div>
@@ -83,60 +83,7 @@ $mon_profil = SelectWhere("t_profils", "Id_Etd_Profil", $_GET["profil"]);
                         <h2>Centres d'intérêt</h2>
                         <p><?php echo $mon_profil["Interets_Profil"];?></p>
                     </div>
-                    <!--Cette div va afficher l'historique des posts et commentaires de l'utilisateur-->
-                    <!--<div class="activity">
-                        <h2>Activité</h2>
-                        <div class="wrapper-activity">
-                            
-                        <div class="activity-comment">
-                            <div class="infos">
-                               <div class="img-user">
-                               <img src="<?php echo $mon_profil["Photo_Profil"];?>" alt="#">
-                               </div>
-                               <p class="username mx-2"><?php echo $_SESSION['nom'];?></p>
-                               <p class="indicator">a commenté un post</p>
-                               <div class="time-indicator flexSpaceAround"><i class="fa-solid fa-circle mx-2"></i><p>2h</p></div>
-                            </div>
-                            <div class="comment">
-                              <p>J'ai apprécié la sortie au domaine Bini ! Je me souviens que Monsieur Hogui n'était pas serein sur la pirogue &#128514;</p>
-                            </div>                            
-                        </div>
-                        <div class="activity-comment">
-                            <div class="infos">
-                               <div class="img-user">
-                               <img src="<?php echo $mon_profil["Photo_Profil"];?>" alt="#">
-                               </div>
-                               <p class="username mx-2"><?php echo $_SESSION['nom'];?></p>
-                               <p class="indicator" id="comment-post">a commenté un post</p>
-                               <div class="time-indicator flexSpaceAround"><i class="fa-solid fa-circle mx-2"></i><p>4j</p></div>
-                            </div>
-                            <div class="comment">
-                              <p>Félicitations ! vu tout ton travail abattu, tu mérites ce prix &#128513;</p>
-                            </div>                            
-                        </div>
-                         
-                        <div class="activity-post">
-                            <div class="infos">
-                               <div class="img-user">
-                               <img src="<?php echo $mon_profil["Photo_Profil"];?>" alt="#">
-                               </div>
-                               <p class="username mx-2"><?php echo $_SESSION['nom'];?></p>
-                               <p class="indicator" id="post">a publié un post</p>
-                               <div class="time-indicator flexSpaceAround"><i class="fa-solid fa-circle mx-2"></i><p>12j</p></div>
-                            </div>
-                            <div class="description">
-                              <p>Voici une image que j'ai pris moi-même ! je suis assez fier du résultat &#128512;</p>
-                            </div>  
-                            <div class="media my-3">
-                                
-                                <a href="assets/photo.jpg"><img src="assets/photo.jpg" alt="photographie"></a>
-                            </div>                         
-                        </div>
-                        </div>
-                        <div class="see-more">
-                            <a href="#">Afficher toute l'activité</a><i class="fa-solid fa-arrow-right mx-2"></i>
-                        </div>
-                  </div>-->
+                   
                 </div>
                 <div class="col-sm-4">
                 <?php
@@ -171,4 +118,6 @@ $mon_profil = SelectWhere("t_profils", "Id_Etd_Profil", $_GET["profil"]);
         </div>
         </div>
 
-    
+    <script>
+        document.getElementById('banner').style.backgroundColor =" <?php echo $mon_profil['Couleur_Profil'] ?> "
+    </script>

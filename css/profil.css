@@ -46,8 +46,6 @@ body{
     }
 
   .banner{
-    background-image: linear-gradient(to right bottom, #f9c200, #c5d535, #91e26a, #5ae89e,
-     #12ebcd);
     width: 100%;
     height: 200px;
     position: relative;

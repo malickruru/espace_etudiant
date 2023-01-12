@@ -57,7 +57,7 @@
                         </div>  
                         <div class="color-div">
                             <h4>Cliquez pour choisir une couleur</h4>
-                            <input type="color" name="couleur" class="color-picker">
+                            <input type="color" name="couleur" id="couleur" class="color-picker">
                         </div>
                     </div>  
                 </div>
