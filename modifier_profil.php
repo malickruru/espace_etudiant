@@ -78,7 +78,7 @@
                         </div>
                         <div class="color-div">
                             <h4>Cliquez pour choisir une couleur</h4>
-                            <input type="color" name="couleur" class="color-picker"
+                            <input type="color" name="couleur" id="couleur" class="color-picker"
                                 value="<?php echo $mon_profil['Couleur_Profil'] ?>">
                         </div>
                     </div>
@@ -139,3 +139,12 @@
 
     </div>
 </div>
+
+<script>
+    let couleur = document.getElementById('couleur');
+    console.log(couleur)
+    let apercu = document.getElementById('apercu');
+    couleur.addEventListener('change', () => {
+        apercu.style.backgroundColor = couleur.value; 
+    })
+</script>
