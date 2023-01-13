@@ -16,6 +16,7 @@ $mon_profil = SelectWhere("t_profils", "Id_Etd_Profil", $_GET["profil"]);
         <div class="row">
             <div class="col-sm-8">
                 <div class="head-profile">
+                
                     <!--Bannière du profil (contiendra la photo de profil et le statut)-->
                     <div class="banner" id="banner">
                         <div class="p-pic">
@@ -110,7 +111,7 @@ $mon_profil = SelectWhere("t_profils", "Id_Etd_Profil", $_GET["profil"]);
                   <div class="download-cv">
                         <h3 class="mt-2">Télécharger le CV<i class="fa-solid fa-download mx-2"></i></h3>
                         <div class=" download-link flexSpaceAround">
-                          <a href="<?php echo $mon_profil["Cv_Profil"]?>">--> Cliquez Ici pour télécharger <--</a>
+                          <a href="<?php echo $mon_profil["Cv_Profil"]?>" download>--> Cliquez Ici pour télécharger <--</a>
                         </div>
                   </div>
             
