@@ -64,13 +64,13 @@ p {
             <div class="publication_action ">
                 <div class="my">
                     <a href="whatsapp://send?text=<?php echo urlencode('http://' . $_SERVER["SERVER_NAME"] . url_format($_SERVER["REQUEST_URI"])[0] . '?publication='.$id_pulication); ?>"
-                        data-action="share/whatsapp/share"><i class="fa-solid fa-share-nodes"></i></a>
+                        data-action="share/whatsapp/share" title="partager sur whatsapp"><i
+                            class="bi bi-whatsapp"></i></a>
+                    <a href="mailto:?body=<?php echo urlencode('http://' . $_SERVER["SERVER_NAME"] . url_format($_SERVER["REQUEST_URI"])[0] . '?publication='.$id_pulication); ?>"
+                        data-action="share/mail/share" title="partager par mail"><i class="bi bi-envelope"></i></a>
 
                 </div>
-                <!-- <div class="my">
-                    <a href="mailto:?body=<?php echo urlencode('http://' . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"]); ?>"
-                        data-action="share/mail/share">Share via Email</a>
-                </div> -->
+
 
 
                 <div class="my click">
@@ -89,5 +89,8 @@ p {
     </div>
 
 </div>
+
+
+
 
 <?php } ?>

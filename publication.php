@@ -37,12 +37,12 @@ publication($item['Id_Post'],$item['Id_Etd_Post'],$item['Image_Post'],$item['Dat
 
         <div class="comment_row">
             <div class="comment_pic">
-                <div class="comment_text">
-                    <img src=<?php  echo getProfilePic($com['id_etudiant'])?> alt="" class="rounded-img-1"
-                        title=<?php echo getUserName($com['id_etudiant'])?>>
-                    <p><?php echo $com['text']?></p>
-                    <span><?php echo $com['date']?></span>
-                </div>
+                <img src=<?php  echo getProfilePic($com['id_etudiant'])?> alt="" class="rounded-img-1"
+                    title=<?php echo getUserName($com['id_etudiant'])?>>
+            </div>
+            <div class="comment_text ">
+                <p><?php echo $com['text']?></p>
+                <span><?php echo $com['date']?></span>
             </div>
         </div>
 

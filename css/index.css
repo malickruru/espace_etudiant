@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Nunito&family=Poppins&display=swap');
 /* cdn pour les icones */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
 @import url('header.css');
 @import url('connexion.css');
 @import url('profil.css');
@@ -30,3 +31,4 @@
     color: #000;
     font-size: 15px;
 }
+
