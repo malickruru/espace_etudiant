@@ -34,6 +34,16 @@ function SelectWhere($table,$champ,$value){
     return $req -> fetch();
 }
 
+function SelectAllWhere($table,$champ,$value){
+    global $connexion;
+    $req = $connexion->prepare("SELECT * FROM $table WHERE $champ = :value");
+    $req->execute(array(
+        'value' => $value,
+    ));
+    return $req -> fetchAll();
+}
+
+
 // INSERT
 function Insert($table,$arr){
     global $connexion;

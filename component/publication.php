@@ -6,15 +6,15 @@ function getUserName($id){
     }
 
 function getProfilePic($id){
-        if ( !SelectWhere('t_profils','Id_Etd_Profil',$id) ) {
-            return 'https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-unknown-social-media-user-photo-default-avatar-profile-icon-vector-unknown-social-media-user-184816085.jpg';
-        }
-        return SelectWhere('t_profils','Id_Etd_Profil',$id)['Photo_Profil'];
-        }
+    if ( !SelectWhere('t_profils','Id_Etd_Profil',$id) ) {
+        return 'https://thumbs.dreamstime.com/b/default-avatar-profile-icon-vector-unknown-social-media-user-photo-default-avatar-profile-icon-vector-unknown-social-media-user-184816085.jpg';
+    }
+    return SelectWhere('t_profils','Id_Etd_Profil',$id)['Photo_Profil'];
+    }
 
 function url_format($url){
     return explode('?',$url);
-}
+    }
 
         
 // function getCommentById($id,$data,$users ){
@@ -67,10 +67,17 @@ p {
                         data-action="share/whatsapp/share"><i class="fa-solid fa-share-nodes"></i></a>
 
                 </div>
+                <!-- <div class="my">
+                    <a href="mailto:?body=<?php echo urlencode('http://' . $_SERVER["SERVER_NAME"] . $_SERVER["REQUEST_URI"]); ?>"
+                        data-action="share/mail/share">Share via Email</a>
+                </div> -->
 
 
                 <div class="my click">
-                    <i class="fa-regular fa-comment"></i>
+                    <a href=<?php echo "index.php?publication=".$id_pulication  ?>>
+                        <i class=" fa-regular fa-comment"></i>
+                    </a>
+
                 </div>
             </div>
             <div class="publication_text">
