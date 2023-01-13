@@ -15,7 +15,10 @@ if ($content == 'publication') {
             
         }else{
             
-            echo 'code en maintenance';
+            $offre_emplois= SelectAll('t_offres');
+            foreach ($offre_emplois as $item ) {
+                emploi($item['nom_poste'],$item['description_poste'],$item['nom_entreprise'],$item['date'],);
+            }
         }
         ?>
 <!-- sidebar -->
