@@ -71,24 +71,6 @@ body{
   transform: scale(1.5);
 }
 
-.p-status{
-  width: 20px;
-  height: 20px;
-  border-radius: 50px;
-  position: absolute;
-  bottom: -75px;
-  left: 17%;
-  border: 3px solid white !important;
-}
-
-.p-status-online{
-  background-color: #6ee537;
-}
-
-.p-status-offline{
-  background-color: grey;
-}
-
 
 /*Contenu du head*/
 

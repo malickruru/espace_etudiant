@@ -22,7 +22,6 @@ $mon_profil = SelectWhere("t_profils", "Id_Etd_Profil", $_GET["profil"]);
                         <div class="p-pic">
                         <img src="<?php echo $mon_profil["Photo_Profil"];?>" alt="#">
                         </div>
-                        <div class="p-status p-status-online"></div>
                     </div>
                     <!--Contenu du profil (contiendra le nom, la filière ou le poste de l'utilisateur, ses réseaux, sa biographie)-->
                     <div class="p-username" id="p-name">
@@ -72,10 +71,18 @@ $mon_profil = SelectWhere("t_profils", "Id_Etd_Profil", $_GET["profil"]);
                     <div class="social-media-profile">
                         <h4>Réseaux Sociaux :</h4>
                         <ul>
-                            <li class="first"><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
-                            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                            <li><a href="#"><i class="fa-brands fa-linkedin"></i></i></a></li>
+                            <?php if(!empty($mon_profil["Link_facebook"])&& !$mon_profil["Link_facebook"]=""){?> 
+                            <li class="first"><a href=" <?php echo urlencode($mon_profil["Link_facebook"])?>"><i class="fa-brands fa-facebook"></i></a></li>
+                            <?php } ?>
+
+                            <?php if(!empty($mon_profil["Link_instagram"]) && !$mon_profil["Link_instagram"]=""){?> 
+                                <li><a href="<?php echo $mon_profil["Link_instagram"]?>"><i class="fa-brands fa-instagram"></i></a></li>
+                            <?php } ?>
+                            
+                            <?php if(!empty($mon_profil["Link_linkedin"]) && !$mon_profil["Link_linkedin"]=""){?> 
+                                <li><a href="<?php echo $mon_profil["Link_linkedin"] ?>"><i class="fa-brands fa-linkedin"></i></i></a></li>
+                            <?php } ?>
+                            
                         </ul>
                     </div>
                 </div>

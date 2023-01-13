@@ -10,6 +10,9 @@
         $bio = $_POST['bio'];
         $interet = $_POST['interet'];
         $couleur = $_POST['couleur'];
+        $facebook = $_POST['Facebook'];
+        $instagram = $_POST['Instagram'];
+        $linkedin = $_POST['Linkedin'];
 
         $url_img = uploadImg($_FILES['img_profil']);
         $url_cv = uploadCv($_FILES['mon_cv']);
@@ -21,10 +24,13 @@
          'Bio_Profil' => $_POST['bio'],
          'Interets_Profil'  =>$_POST['interet'],
          'Couleur_Profil' => $_POST['couleur'],
-         'Cv_Profil'  => $url_cv
+         'Cv_Profil'  => $url_cv,
+         'Link_facebook' => $_POST['Facebook'],
+         'Link_instagram' => $_POST['Instagram'],
+         'Link_linkedin' => $_POST['Linkedin'], 
      ];
      //---Envoi de Requête pour update des éléménts dans la table profils---
-    $req_update_profil = $connexion->prepare("UPDATE t_profils SET Numero_Tel = '$num', Photo_Profil = '$url_img', Numero_Whatsapp = '$num_whatsapp', Bio_Profil = '$bio', Interets_Profil = '$interet', Couleur_Profil = '$couleur', Cv_Profil = '$url_cv'");
+    $req_update_profil = $connexion->prepare("UPDATE t_profils SET Numero_Tel = '$num', Photo_Profil = '$url_img', Numero_Whatsapp = '$num_whatsapp', Bio_Profil = '$bio', Interets_Profil = '$interet', Couleur_Profil = '$couleur', Cv_Profil = '$url_cv', Link_facebook = '$facebook', Link_instagram = '$instagram', Link_linkedin = '$linkedin'");
     $req_update_profil->execute();
 
      if($req_update_profil){
@@ -101,6 +107,18 @@
                         <label for="name">Numéro WhatsApp</label>
                         <input type="tel" name="WhatsApp" id="WhatsApp" placeholder="ex: 0102061311"
                             value="<?php echo $mon_profil["Numero_Whatsapp"]; ?>">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="name">Lien Facebook</label>
+                        <input type="tel" name="Facebook" id="Facebook" placeholder="rentrez votre lien..." value="" >
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="name">Lien Instagram</label>
+                        <input type="tel" name="Instagram" id="Instagram" placeholder="rentrez votre lien..." value="" >
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="name">Lien Linkedin</label>
+                        <input type="tel" name="Linkedin" id="Linkedin" placeholder="rentrez votre lien..." value="" >
                     </div>
                     <div class="input-wrapper">
                         <label for="name">Biographie</label>

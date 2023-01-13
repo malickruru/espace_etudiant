@@ -15,6 +15,9 @@
         'Interets_Profil'  =>$_POST['interet'],
         'Annee_Entree' => $_POST['annee'],
         'Couleur_Profil' => $_POST['couleur'],
+        'Link_facebook' => $_POST['Facebook'],
+        'Link_instagram' => $_POST['Instagram'],
+        'Link_linkedin' => $_POST['Linkedin'],
         'Cv_Profil'  => $url_cv
     ];
     // Insert("t_profils", $tab_profils);
@@ -81,6 +84,18 @@
                     <div class="input-wrapper">
                         <label for="name">Numéro WhatsApp</label>
                         <input type="tel" name="WhatsApp" id="WhatsApp" placeholder="ex: 0102061311" value="" >
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="name">Lien Facebook</label>
+                        <input type="tel" name="Facebook" id="Facebook" placeholder="rentrez votre lien..." value="" >
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="name">Lien Instagram</label>
+                        <input type="tel" name="Instagram" id="Instagram" placeholder="rentrez votre lien..." value="" >
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="name">Lien Linkedin</label>
+                        <input type="tel" name="Linkedin" id="Linkedin" placeholder="rentrez votre lien..." value="" >
                     </div>
                     <div class="input-wrapper">
                         <label for="classe" class="custom-select">
