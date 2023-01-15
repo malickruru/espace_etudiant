@@ -61,11 +61,11 @@
                 <div class="picture">
                     <h3>Votre photo de profil</h3>
                     <div class="p-pic" style="position:unset;">
-                        <img src="" alt="#">
+                        <img id="ShowImg" src="" alt="#">
                     </div>
                     <div class="btnUpload">
                         <input type="file" class="fileBtn" name="img_profil" id="img_profil"
-                            value="<?php echo $mon_profil['Photo_Profil']; ?>">
+                            value="<?php echo $mon_profil["Photo_Profil"]?>">
                     </div>
                 </div>
                 <!-- la couleur de la bannière-->
@@ -79,7 +79,7 @@
                         <div class="color-div">
                             <h4>Cliquez pour choisir une couleur</h4>
                             <input type="color" name="couleur" id="couleur" class="color-picker"
-                                value="<?php echo $mon_profil['Couleur_Profil'] ?>">
+                                value="<?php echo $mon_profil["Couleur_Profil"] ?>">
                         </div>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
                     <h3>Votre CV</h3>
                     <h4>Veuillez uploader votre cv</h4>
                     <div class="cvupload">
-                        <input type="file" name="mon_cv" id="mon_cv" value="<?php echo $mon_profil['Cv_Profil'] ?>">
+                        <input type="file" name="mon_cv" id="mon_cv" value="<?php echo $mon_profil["Cv_Profil"] ?>">
                     </div>
                 </div>
 
@@ -110,15 +110,15 @@
                     </div>
                     <div class="input-wrapper">
                         <label for="name">Lien Facebook</label>
-                        <input type="tel" name="Facebook" id="Facebook" placeholder="rentrez votre lien..." value="" >
+                        <input type="tel" name="Facebook" id="Facebook" placeholder="rentrez votre lien..." value="<?php echo $mon_profil["Link_facebook"]; ?>" >
                     </div>
                     <div class="input-wrapper">
                         <label for="name">Lien Instagram</label>
-                        <input type="tel" name="Instagram" id="Instagram" placeholder="rentrez votre lien..." value="" >
+                        <input type="tel" name="Instagram" id="Instagram" placeholder="rentrez votre lien..." value="<?php echo $mon_profil["Link_instagram"]; ?>" >
                     </div>
                     <div class="input-wrapper">
                         <label for="name">Lien Linkedin</label>
-                        <input type="tel" name="Linkedin" id="Linkedin" placeholder="rentrez votre lien..." value="" >
+                        <input type="tel" name="Linkedin" id="Linkedin" placeholder="rentrez votre lien..." value="<?php echo $mon_profil["Link_linkedin"];?>">
                     </div>
                     <div class="input-wrapper">
                         <label for="name">Biographie</label>
@@ -147,4 +147,10 @@
     couleur.addEventListener('change', () => {
         apercu.style.backgroundColor = couleur.value; 
     })
+
+
+    //------------------
+
+
+   
 </script>
